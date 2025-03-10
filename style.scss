@@ -61,21 +61,21 @@ figure {
     height: 100px;
     border-bottom: 1px solid map-get($map: $color, $key: dark);
   }
-  .backImg{
+  .backImg {
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     position: absolute;
     background-image: url("./imgs/backflowers/backflowers0.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  opacity: 0.5;
-  z-index: -1; 
-  &.on {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     opacity: 0.5;
-  }
+    z-index: -1;
+    &.on {
+      opacity: 0.5;
+    }
   }
   section {
     width: 30vw;
@@ -149,7 +149,6 @@ figure {
                 img {
                   width: 88%;
                   height: 85%;
-                  
                 }
               }
             }
@@ -188,7 +187,6 @@ figure {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            
           }
           &.on {
             animation: circleText 25s linear infinite;
@@ -208,7 +206,6 @@ figure {
         //     background: map-get($map: $color, $key: rose);
         //   }
         // }
-
       }
       &:nth-child(2) {
         .dot {
@@ -350,7 +347,7 @@ figure {
     }
     &::after {
       @include btnDetail;
-      top: 50%;
+      bottom: 50%;
       transform: rotate(-180deg);
       transform-origin: left center;
     }

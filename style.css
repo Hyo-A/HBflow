@@ -172,7 +172,8 @@ figure section article .inner .pic {
 figure section article .inner .pic > img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 figure section article .inner .pic.on {
   animation: circleText 25s linear infinite;
@@ -312,7 +313,7 @@ figure .btnNext::after {
   position: absolute;
   left: 0;
   transition: all 0.5s;
-  top: 50%;
+  bottom: 50%;
   transform: rotate(-180deg);
   transform-origin: left center;
 }
