@@ -1,0 +1,421 @@
+@import "./styles/reset.scss";
+@import "./styles/variables.scss";
+
+@mixin btnStyle {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 49%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+@mixin btnDetail {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: map-get($map: $color, $key: dark);
+  position: absolute;
+  left: 0;
+  transition: all 0.5s;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+figure {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background-color: rgba(241, 231, 213, 0.7);
+  header {
+    position: absolute;
+    width: 80vw;
+    height: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    #mainlogo {
+      font: italic 5rem/1 map-get($map: $font, $key: cormorant);
+      color: map-get($map: $color, $key: dark);
+      font-weight: bold;
+    }
+    #gnb {
+      i {
+        font-size: 2.8rem;
+        color: map-get($map: $color, $key: dark);
+      }
+    }
+  }
+  .headerline {
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px solid map-get($map: $color, $key: dark);
+  }
+  .backImg{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-image: url("./imgs/backflowers/backflowers0.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  z-index: -1; 
+  &.on {
+    opacity: 0.5;
+  }
+  }
+  section {
+    width: 30vw;
+    height: 30vw;
+    position: absolute;
+    top: 125%;
+    left: 50%;
+    margin-left: -15vw;
+    margin-top: -15vw;
+    transition: all 2s;
+
+    article {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      &.on {
+        .inner {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+      .inner {
+        width: 100%;
+        height: 100%;
+        transform: scale(0.9);
+        opacity: 0.6;
+        .dot {
+          position: absolute;
+          top: 10%;
+          left: 10%;
+          width: 80%;
+          height: 80%;
+          // border: 1px solid map-get($map: $color, $key: rose);
+          border-radius: 50%;
+          overflow: hidden;
+          .musicSection {
+            z-index: 1;
+            position: absolute;
+            width: 45%;
+            height: 18%;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            ul {
+              width: 80%;
+              display: flex;
+              justify-content: space-between;
+              li {
+                cursor: pointer;
+                opacity: 0.6;
+                transform: scale(0.8);
+                transition: all 0.4s;
+                // &.play {
+                //   opacity: 0.8;
+                //   transform: scale(1);
+                // }
+                &:hover {
+                  opacity: 1;
+                  transform: scale(1);
+                }
+                &.on {
+                  opacity: 1;
+                  transform: scale(1);
+                }
+                img {
+                  width: 88%;
+                  height: 85%;
+                  
+                }
+              }
+            }
+            .allplaytime {
+              top: 50%;
+              width: 100%;
+              height: 0.5vw;
+              // background: rgba($color: #7d3536, $alpha: 0.3);
+              border-radius: 1000px;
+              .playtime {
+                left: 0;
+                width: 10%;
+                height: 100%;
+                // background: map-get($map: $color, $key: rose);
+                border-radius: 1000px;
+              }
+            }
+          }
+          .flowerpic {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        }
+        .pic {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          // border: 1px solid map-get($map: $color, $key: rose);
+          border-radius: 50%;
+          overflow: hidden;
+          & > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            
+          }
+          &.on {
+            animation: circleText 25s linear infinite;
+          }
+        }
+      }
+      &:nth-child(1) {
+        .dot {
+          border: 1px solid map-get($map: $color, $key: rose);
+        }
+        .pic {
+          border: 1px solid map-get($map: $color, $key: rose);
+        }
+        // .allplaytime {
+        //   background: rgba($color: #7d3536, $alpha: 0.3);
+        //   .playtime {
+        //     background: map-get($map: $color, $key: rose);
+        //   }
+        // }
+
+      }
+      &:nth-child(2) {
+        .dot {
+          border: 1px solid map-get($map: $color, $key: sunflower);
+        }
+        .pic {
+          border: 1px solid map-get($map: $color, $key: sunflower);
+        }
+        // .allplaytime {
+        //   background: rgba($color: #847e30, $alpha: 0.3);
+        //   .playtime {
+        //     background: map-get($map: $color, $key: sunflower);
+        //   }
+        // }
+      }
+      &:nth-child(3) {
+        .dot {
+          border: 1px solid map-get($map: $color, $key: dandelion);
+        }
+        .pic {
+          border: 1px solid map-get($map: $color, $key: dandelion);
+        }
+        // .allplaytime {
+        //   background: rgba($color: #347353, $alpha: 0.3);
+        //   .playtime {
+        //     background: map-get($map: $color, $key: dandelion);
+        //   }
+        // }
+      }
+      &:nth-child(4) {
+        .dot {
+          border: 1px solid map-get($map: $color, $key: cherry);
+        }
+        .pic {
+          border: 1px solid map-get($map: $color, $key: cherry);
+        }
+        // .allplaytime {
+        //   background: rgba($color: #df597a, $alpha: 0.3);
+        //   .playtime {
+        //     background: map-get($map: $color, $key: cherry);
+        //   }
+        // }
+      }
+      &:nth-child(5) {
+        .dot {
+          border: 1px solid map-get($map: $color, $key: freesia);
+        }
+        .pic {
+          border: 1px solid map-get($map: $color, $key: freesia);
+        }
+        // .allplaytime {
+        //   background: rgba($color: #cd5d27, $alpha: 0.3);
+        //   .playtime {
+        //     background: map-get($map: $color, $key: freesia);
+        //   }
+        // }
+      }
+      &:nth-child(6) {
+        .dot {
+          border: 1px solid map-get($map: $color, $key: lily);
+        }
+        .pic {
+          border: 1px solid map-get($map: $color, $key: lily);
+        }
+        // .allplaytime {
+        //   background: rgba($color: #a50f12, $alpha: 0.3);
+        //   .playtime {
+        //     background: map-get($map: $color, $key: lily);
+        //   }
+        // }
+      }
+    }
+  }
+  .btnPrev {
+    @include btnStyle;
+    text-align: left;
+    left: 50%;
+    transform: translate(-25vw, 50%);
+    cursor: pointer;
+    &:hover {
+      span {
+        animation: ani3 1s linear infinite;
+        // animation-delay: 0.3s;
+      }
+      &::before {
+        transform: rotate(-150deg);
+      }
+      &::after {
+        transform: rotate(150deg);
+      }
+    }
+    span {
+      color: map-get($map: $color, $key: dark);
+      font: bold 2.5rem/1 map-get($map: $font, $key: cormorant);
+      opacity: 1;
+      transform: translateX(140%);
+    }
+    &::before {
+      @include btnDetail;
+      top: 50%;
+      transform: rotate(-180deg);
+      transform-origin: right center;
+    }
+    &::after {
+      @include btnDetail;
+      bottom: 50%;
+      transform: rotate(180deg);
+      transform-origin: right center;
+    }
+  }
+  .btnNext {
+    @include btnStyle;
+    text-align: right;
+    right: 50%;
+    transform: translate(25vw, 50%);
+    cursor: pointer;
+    &:hover {
+      span {
+        animation: ani4 1s linear infinite;
+        // animation-delay: 0.3s;
+      }
+      &::before {
+        transform: rotate(150deg);
+      }
+      &::after {
+        transform: rotate(-150deg);
+      }
+    }
+    span {
+      color: map-get($map: $color, $key: dark);
+      font: bold 2.5rem/1 map-get($map: $font, $key: cormorant);
+      transform: translateX(-180%);
+    }
+    &::before {
+      @include btnDetail;
+      top: 50%;
+      transform: rotate(180deg);
+      transform-origin: left center;
+    }
+    &::after {
+      @include btnDetail;
+      top: 50%;
+      transform: rotate(-180deg);
+      transform-origin: left center;
+    }
+  }
+}
+
+@keyframes circleText {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes ani {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ani2 {
+  0% {
+    transform: translateY(10%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(10%) rotate(360deg);
+  }
+}
+
+@keyframes ani3 {
+  0% {
+    transform: translateX(140%);
+  }
+  20% {
+    transform: translateX(130%);
+  }
+  50% {
+    transform: translateX(140%);
+  }
+  80% {
+    transform: translateX(150%);
+  }
+  100% {
+    transform: translateX(140%);
+  }
+}
+
+@keyframes ani4 {
+  0% {
+    transform: translateX(-180%);
+  }
+  20% {
+    transform: translateX(-170%);
+  }
+  50% {
+    transform: translateX(-180%);
+  }
+  80% {
+    transform: translateX(-190%);
+  }
+  100% {
+    transform: translateX(-180%);
+  }
+}

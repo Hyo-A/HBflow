@@ -1,0 +1,377 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+figure {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background-color: rgba(241, 231, 213, 0.7);
+}
+figure header {
+  position: absolute;
+  width: 80vw;
+  height: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+figure header #mainlogo {
+  font: italic 5rem/1 "Cormorant";
+  color: #000;
+  font-weight: bold;
+}
+figure header #gnb i {
+  font-size: 2.8rem;
+  color: #000;
+}
+figure .headerline {
+  width: 100%;
+  height: 100px;
+  border-bottom: 1px solid #000;
+}
+figure .backImg {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-image: url("./imgs/backflowers/backflowers0.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  z-index: -1;
+}
+figure .backImg.on {
+  opacity: 0.5;
+}
+figure section {
+  width: 30vw;
+  height: 30vw;
+  position: absolute;
+  top: 125%;
+  left: 50%;
+  margin-left: -15vw;
+  margin-top: -15vw;
+  transition: all 2s;
+}
+figure section article {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+figure section article.on .inner {
+  transform: scale(1);
+  opacity: 1;
+}
+figure section article .inner {
+  width: 100%;
+  height: 100%;
+  transform: scale(0.9);
+  opacity: 0.6;
+}
+figure section article .inner .dot {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+figure section article .inner .dot .musicSection {
+  z-index: 1;
+  position: absolute;
+  width: 45%;
+  height: 18%;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+figure section article .inner .dot .musicSection ul {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+figure section article .inner .dot .musicSection ul li {
+  cursor: pointer;
+  opacity: 0.6;
+  transform: scale(0.8);
+  transition: all 0.4s;
+}
+figure section article .inner .dot .musicSection ul li:hover {
+  opacity: 1;
+  transform: scale(1);
+}
+figure section article .inner .dot .musicSection ul li.on {
+  opacity: 1;
+  transform: scale(1);
+}
+figure section article .inner .dot .musicSection ul li img {
+  width: 88%;
+  height: 85%;
+}
+figure section article .inner .dot .musicSection .allplaytime {
+  top: 50%;
+  width: 100%;
+  height: 0.5vw;
+  border-radius: 1000px;
+}
+figure section article .inner .dot .musicSection .allplaytime .playtime {
+  left: 0;
+  width: 10%;
+  height: 100%;
+  border-radius: 1000px;
+}
+figure section article .inner .dot .flowerpic {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+figure section article .inner .pic {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+figure section article .inner .pic > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+figure section article .inner .pic.on {
+  animation: circleText 25s linear infinite;
+}
+figure section article:nth-child(1) .dot {
+  border: 1px solid #7d3536;
+}
+figure section article:nth-child(1) .pic {
+  border: 1px solid #7d3536;
+}
+figure section article:nth-child(2) .dot {
+  border: 1px solid #847e30;
+}
+figure section article:nth-child(2) .pic {
+  border: 1px solid #847e30;
+}
+figure section article:nth-child(3) .dot {
+  border: 1px solid #347353;
+}
+figure section article:nth-child(3) .pic {
+  border: 1px solid #347353;
+}
+figure section article:nth-child(4) .dot {
+  border: 1px solid #df597a;
+}
+figure section article:nth-child(4) .pic {
+  border: 1px solid #df597a;
+}
+figure section article:nth-child(5) .dot {
+  border: 1px solid #cd5d27;
+}
+figure section article:nth-child(5) .pic {
+  border: 1px solid #cd5d27;
+}
+figure section article:nth-child(6) .dot {
+  border: 1px solid #a50f12;
+}
+figure section article:nth-child(6) .pic {
+  border: 1px solid #a50f12;
+}
+figure .btnPrev {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 49%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-align: left;
+  left: 50%;
+  transform: translate(-25vw, 50%);
+  cursor: pointer;
+}
+figure .btnPrev:hover span {
+  animation: ani3 1s linear infinite;
+}
+figure .btnPrev:hover::before {
+  transform: rotate(-150deg);
+}
+figure .btnPrev:hover::after {
+  transform: rotate(150deg);
+}
+figure .btnPrev span {
+  color: #000;
+  font: bold 2.5rem/1 "Cormorant";
+  opacity: 1;
+  transform: translateX(140%);
+}
+figure .btnPrev::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: #000;
+  position: absolute;
+  left: 0;
+  transition: all 0.5s;
+  top: 50%;
+  transform: rotate(-180deg);
+  transform-origin: right center;
+}
+figure .btnPrev::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: #000;
+  position: absolute;
+  left: 0;
+  transition: all 0.5s;
+  bottom: 50%;
+  transform: rotate(180deg);
+  transform-origin: right center;
+}
+figure .btnNext {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 49%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-align: right;
+  right: 50%;
+  transform: translate(25vw, 50%);
+  cursor: pointer;
+}
+figure .btnNext:hover span {
+  animation: ani4 1s linear infinite;
+}
+figure .btnNext:hover::before {
+  transform: rotate(150deg);
+}
+figure .btnNext:hover::after {
+  transform: rotate(-150deg);
+}
+figure .btnNext span {
+  color: #000;
+  font: bold 2.5rem/1 "Cormorant";
+  transform: translateX(-180%);
+}
+figure .btnNext::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: #000;
+  position: absolute;
+  left: 0;
+  transition: all 0.5s;
+  top: 50%;
+  transform: rotate(180deg);
+  transform-origin: left center;
+}
+figure .btnNext::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: #000;
+  position: absolute;
+  left: 0;
+  transition: all 0.5s;
+  top: 50%;
+  transform: rotate(-180deg);
+  transform-origin: left center;
+}
+
+@keyframes circleText {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes ani {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes ani2 {
+  0% {
+    transform: translateY(10%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(10%) rotate(360deg);
+  }
+}
+@keyframes ani3 {
+  0% {
+    transform: translateX(140%);
+  }
+  20% {
+    transform: translateX(130%);
+  }
+  50% {
+    transform: translateX(140%);
+  }
+  80% {
+    transform: translateX(150%);
+  }
+  100% {
+    transform: translateX(140%);
+  }
+}
+@keyframes ani4 {
+  0% {
+    transform: translateX(-180%);
+  }
+  20% {
+    transform: translateX(-170%);
+  }
+  50% {
+    transform: translateX(-180%);
+  }
+  80% {
+    transform: translateX(-190%);
+  }
+  100% {
+    transform: translateX(-180%);
+  }
+}
